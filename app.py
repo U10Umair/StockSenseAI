@@ -13,7 +13,9 @@ import joblib
 
 from PIL import Image
 
-logo = Image.open(r"D:\Umair Data\Build Projects\StockSenseAI\logo pic\logo.png")
+# logo = Image.open(r"D:\Umair Data\Build Projects\StockSenseAI\logo pic\logo.png")
+
+logo = Image.open("logo pic/logo.png")
 
 st.set_page_config(
     page_title="StockSenseAI | Stock Predictor",
@@ -359,14 +361,27 @@ with st.sidebar:
 
     # logo_base64 = base64.b64encode(open(r"D:\Umair Data\Build Projects\StockSenseAI\logo pic\logo 2.png", "rb").read()).decode()
     # Try this exact name (with space)
-    logo_base64 = base64.b64encode(open(r"D:\Umair Data\Build Projects\StockSenseAI\logo pic\logo 2.png", "rb").read()).decode()
+    # logo_base64 = base64.b64encode(open(r"D:\Umair Data\Build Projects\StockSenseAI\logo pic\logo 2.png", "rb").read()).decode()
+    # st.markdown(f"""
+    # <div style='text-align:center; padding: 1rem 0 1.5rem;'>
+    #     <img src='data:image/png;base64,{logo_base64}' 
+    #          style='height:80px; width:80px; border-radius:50%; object-fit:cover;'/>
+    #     <div style='font-family:"Syne",sans-serif; font-weight:800; font-size:1.3rem; color:#cdd9e5; letter-spacing:-0.02em;'>StockSenseAI</div>
+    #     <div style='font-family:"Space Mono",monospace; font-size:0.65rem; color:#637380; letter-spacing:0.15em; text-transform:uppercase; margin-top:2px;'>ML Stock Predictor</div>
+    # </div>
+    # """, unsafe_allow_html=True)
+    
+    logo_base64 = base64.b64encode(
+    open("logo pic/logo 2.png", "rb").read()
+).decode()
+
     st.markdown(f"""
-    <div style='text-align:center; padding: 1rem 0 1.5rem;'>
-        <img src='data:image/png;base64,{logo_base64}' 
-             style='height:80px; width:80px; border-radius:50%; object-fit:cover;'/>
-        <div style='font-family:"Syne",sans-serif; font-weight:800; font-size:1.3rem; color:#cdd9e5; letter-spacing:-0.02em;'>StockSenseAI</div>
-        <div style='font-family:"Space Mono",monospace; font-size:0.65rem; color:#637380; letter-spacing:0.15em; text-transform:uppercase; margin-top:2px;'>ML Stock Predictor</div>
-    </div>
+<div style='text-align:center; padding: 1rem 0 1.5rem;'>
+    <img src='data:image/png;base64,{logo_base64}' 
+         style='height:80px; width:80px; border-radius:50%; object-fit:cover;'/>
+    <div style='font-family:"Syne",sans-serif; font-weight:800; font-size:1.3rem; color:#cdd9e5; letter-spacing:-0.02em;'>StockSenseAI</div>
+    <div style='font-family:"Space Mono",monospace; font-size:0.65rem; color:#637380; letter-spacing:0.15em; text-transform:uppercase; margin-top:2px;'>ML Stock Predictor</div>
+</div>
     """, unsafe_allow_html=True)
 
     st.markdown("## How It Works")
